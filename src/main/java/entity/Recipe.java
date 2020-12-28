@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Recipes")
+@Table(name = "RECIPE")
 public class Recipe {
 	
 	@Id
@@ -27,6 +27,7 @@ public class Recipe {
 	public String type;
 	
 	public Recipe(int id, String name, int time, String type) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.time = time;
@@ -34,6 +35,11 @@ public class Recipe {
 	}
 	
 			
+	public Recipe() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public int getId() {
 		return id;	
 	}
@@ -65,6 +71,12 @@ public class Recipe {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	@Override
+    public String toString() {
+        return "Recipe {" +
+                ", name=" + name + ", time=" + time + ", type=" + type  + " }" ;
 
+	}
 	
 }
